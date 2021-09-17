@@ -246,6 +246,7 @@ namespace RobotLocalization
           updateIndices[i] == StateMemberPitch ||
           updateIndices[i] == StateMemberYaw)
       {
+        innovationSubset(i) = std::fmod(innovationSubset(i), TAU);
         while (innovationSubset(i) < -PI)
         {
           innovationSubset(i) += TAU;

@@ -128,6 +128,7 @@ namespace FilterUtilities
 
   double clampRotation(double rotation)
   {
+    rotation = std::fmod(rotation, TAU);
     while (rotation > PI)
     {
       rotation -= TAU;
